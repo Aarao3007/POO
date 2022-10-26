@@ -1,10 +1,28 @@
-﻿internal class Program
+﻿using Models;
+using System;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Models.Caneta caneta = new Models.Caneta("Azul", "Bic","Plástico",1, "Esferográfica", 14, 20);
+        Caneta caneta = new Caneta("Azul", "Bic","Plástico",1, "Esferográfica", 14, 20);
         caneta.Destampar();
-        caneta.Estourar();
         caneta.Escrever("Teste");
+
+        Lapis lapis = new Lapis("2B","Faber Castell", "Madeira", "Cinza", "Triangular", 14, 20);
+        Console.WriteLine(lapis.PercentualGrafite);
+        lapis.QuebrarPonta();
+        Console.WriteLine(lapis.PercentualGrafite);
+        lapis.Apontar();
+        lapis.Escrever("Teste");
+        Console.WriteLine(lapis.PercentualGrafite);
+
+        Borracha borracha = new Borracha("Mercur", "Branca", 5, 5, 1, 70);
+        Console.WriteLine(borracha.Percentual);
+        borracha.Apagar(7);
+        Console.WriteLine(borracha.Percentual);
+        borracha.Apagar(11);
+        Console.WriteLine(borracha.Percentual);
+
     }
 }
