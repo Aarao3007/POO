@@ -75,11 +75,30 @@
         {
             cheio = false;
         }
-        public Apontador(string _marca, string cor, double _comprimento,)
+        public void Apontar()
+        {
+            if(PercentualDaLamina <= 3)
+            {
+                Console.WriteLine("Compre outro apontador!");
+            }
+            PercentualDaLamina -= 1;
+            if (Deposito == true)
+            {
+                Cheio = true;
+            }
+        }
+        public Apontador(string _marca, string _cor, double _comprimento, double _largura, double _altura, double _peso, bool _deposito)
         {
             Marca = _marca;
-            QuantidadeFolha = _quantidadeFolha;
-            QuantidadeMateria = _quantidadMateria;
+            Cor = _cor;
+            Comprimento = _comprimento;
+            Largura = _largura;
+            Altura = _altura;
+            Peso = _peso;
+            Deposito = _deposito;
+            Caido = false;
+            Cheio = false;
+            PercentualDaLamina = 100;
         }
 
     }

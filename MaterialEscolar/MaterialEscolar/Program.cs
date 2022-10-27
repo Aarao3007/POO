@@ -24,5 +24,12 @@ internal class Program
         borracha.Apagar(11);
         Console.WriteLine(borracha.Percentual);
 
+        Apontador apontador = new Apontador("Maped", "Verde", 30, 125, 90, 18.6, true);
+        Console.WriteLine(apontador.PercentualDaLamina);
+        Console.WriteLine(apontador.Cheio);
+        apontador.Apontar();
+        Console.WriteLine(apontador.PercentualDaLamina);
+        Console.WriteLine(apontador.Cheio);
+
     }
 }
