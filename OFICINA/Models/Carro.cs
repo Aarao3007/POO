@@ -111,17 +111,22 @@ namespace Models
                 PneuTrazeiroEsquerdo.Girar(_impulso);
                 VelocidadeAtual += _impulso;
             }
+            if(PneuDianteiroDireito.Estourado==true || PneuDianteiroEsquerdo.Estourado == true || PneuTrazeiroDireito.Estourado == true || 
+               PneuTrazeiroEsquerdo.Estourado == true)
+                Frear(VelocidadeAtual);
         }
         public void Frear(int _abatimento)
         {
             VelocidadeAtual -= _abatimento;
             if (VelocidadeAtual < 0)
+            {
                 VelocidadeAtual = 0;
-
-            PneuDianteiroDireito.Frear(_abatimento);
-            PneuDianteiroEsquerdo.Frear(_abatimento);
-            PneuTrazeiroDireito.Frear(_abatimento);
-            PneuTrazeiroEsquerdo.Frear(_abatimento);
+            }
+                PneuDianteiroDireito.Frear(_abatimento);
+                PneuDianteiroEsquerdo.Frear(_abatimento);
+                PneuTrazeiroDireito.Frear(_abatimento);
+                PneuTrazeiroEsquerdo.Frear(_abatimento);
+ 
         }
         public void GastarCombustivel(double _fracao)
         {

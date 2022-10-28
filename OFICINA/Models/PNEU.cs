@@ -73,6 +73,8 @@
         public void Frear(int _abatimento)
         {
             Rotacao -= _abatimento;
+            if (Rotacao < 0)
+                Rotacao = 0;
             GastarBorracha(_abatimento / 100.0);
         }
         public void Furar()
